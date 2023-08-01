@@ -12,6 +12,7 @@ const CounterView = () => {
       <h1>Conter: {counter}</h1>
 
       <button
+        className='btn'
         onClick={() => {
           dispatch(decrement());
         }}
@@ -19,6 +20,7 @@ const CounterView = () => {
         decrease --
       </button>
       <button
+        className='btn'
         onClick={() => {
           dispatch(reset());
         }}
@@ -26,6 +28,7 @@ const CounterView = () => {
         Reset
       </button>
       <button
+        className='btn'
         onClick={() => {
           dispatch(increment());
         }}

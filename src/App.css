@@ -1,0 +1,28 @@
+.user_name {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.user_name h5 {
+  border: 1px solid rgb(204, 199, 199);
+  padding: 10px;
+  text-align: center;
+  width: 50%;
+}
+
+.btn {
+  background-color: #bbf5c8;
+  color: black;
+  font-size: 15px;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: black;
+  color: white;
+}

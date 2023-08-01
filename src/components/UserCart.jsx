@@ -2,7 +2,7 @@ import React from 'react';
 
 const userCart = ({ name }) => {
   return (
-    <article>
+    <article className='user_name'>
       <h5>{name}</h5>
     </article>
   );

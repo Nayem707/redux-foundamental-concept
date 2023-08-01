@@ -1,10 +1,5 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import axios from 'axios';
-
-export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
-  const res = await axios.get('https://jsonplaceholder.typicode.com/users');
-  return res.data;
-});
+import { createSlice } from '@reduxjs/toolkit';
+import { fetchPosts } from './postURL';
 
 const postsSlice = createSlice({
   name: 'posts',

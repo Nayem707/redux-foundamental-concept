@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchPosts } from './postsSlice';
+import { fetchPosts } from './postURL';
 
 import UserCart from '../../components/UserCart';
 
 const PostsView = () => {
   const { isLoading, posts, error } = useSelector((state) => state.posts);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -19,7 +18,7 @@ const PostsView = () => {
         posts.map((p) => {
           const { id, name } = p;
           return (
-            <div key={id}>
+            <div key={id} className='user_cart'>
               <UserCart name={name} />
             </div>
           );
