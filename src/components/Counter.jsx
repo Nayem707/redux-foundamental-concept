@@ -7,8 +7,7 @@ import {
 } from '../service/action/counterAction';
 
 const Counter = () => {
-  const count = useSelector((state) => state.counter); //replace by normal state
-
+  const { counter } = useSelector((state) => state); //replace by normal state
   const dispatch = useDispatch(); //replace by "setState"
 
   const handleIncrement = () => {
@@ -24,7 +23,7 @@ const Counter = () => {
   };
   return (
     <div>
-      <h1>Counter: {count}</h1>
+      <h1>Counter: {counter}</h1>
       <button onClick={handleDecrement}>--</button>
       <button onClick={handelRESET}>reset</button>
       <button onClick={handleIncrement}>++</button>
