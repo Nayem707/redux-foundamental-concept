@@ -2,17 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { AppProvider } from './STATE MANAGEMENT/context/mealsContext';
 
-// import { Provider } from 'react-redux';
-// import store from './store';
-// <Provider store={store}>
-//   <App />
-// </Provider>;
+import { Provider } from 'react-redux';
+import store from './store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <AppProvider>
+  <Provider store={store}>
     <App />
-  </AppProvider>
+  </Provider>
 );
+
+//STATE MANAGEMENT
+// import { AppProvider } from './STATE MANAGEMENT/context/mealsContext';
+//   <AppProvider>
+//     <App />
+//   </AppProvider>
