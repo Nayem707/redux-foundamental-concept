@@ -3,8 +3,8 @@ import axios from 'axios';
 
 const baseURL = 'https://fakestoreapi.com';
 
-export const getCartItem = createAsyncThunk(
-  'carts/getCartItem',
+export const getCartItems = createAsyncThunk(
+  'cart/getCartItems',
   async (thunkAPI) => {
     try {
       const res = await axios.get(`${baseURL}/products`);
