@@ -1,6 +1,6 @@
 import { createContext, useState } from 'react';
 
-const bookContext = createContext({});
+const bookContext = createContext();
 
 const people = [
   {

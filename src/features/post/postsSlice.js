@@ -8,6 +8,7 @@ const postsSlice = createSlice({
     posts: [],
     error: null,
   },
+
   extraReducers: (bulder) => {
     bulder.addCase(fetchPosts.pending, (state) => {
       state.isLoading = true;

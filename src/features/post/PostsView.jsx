@@ -24,7 +24,7 @@ const PostsView = () => {
           );
         })}
 
-      {isLoading && <h1>Loading...</h1>}
+      {isLoading && <h5>Loading...</h5>}
       {error && <h4>{error}</h4>}
     </section>
   );
