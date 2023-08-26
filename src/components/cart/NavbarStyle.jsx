@@ -13,7 +13,7 @@ const NavbarStyle = () => {
         </div>
         <div className='col align-self-center text-right '>
           <span className='bg-dark p-2 rounded position-relative'>
-            cart{' '}
+            Cart{' '}
             <span className='position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger'>
               {amount} <span className='visually-hidden'>unread messages</span>
             </span>

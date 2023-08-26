@@ -1,12 +1,13 @@
-import React from 'react';
 import CartItem from './CartItem';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { clearCart } from '../../features/cart/cartSlice';
 
 const CartContainer = () => {
-  const { cartItems, amount, total, isLoading } = useSelector(
-    (store) => store.cart
-  );
-  if (amount < 0) {
+  const { cartItems, amount, total } = useSelector((store) => store.cart);
+
+  const dispatch = useDispatch();
+
+  if (amount < 1) {
     return (
       <section className='text-center p-5'>
         <header>
@@ -16,35 +17,38 @@ const CartContainer = () => {
       </section>
     );
   }
-  if (isLoading) {
-    return <h2 className='text-center p-5'>Loading...</h2>;
-  }
+
   return (
     <>
-      <div className='card container w-50'>
+      <div className='card container w-50 my-5'>
         <div className='row'>
           <header>
             <h3>Your bag</h3>
           </header>
           <div className='col cart'>
-            {cartItems &&
-              cartItems.map((item) => {
-                return <CartItem key={item.id} {...item} />;
-              })}
+            {cartItems.map((item) => {
+              return <CartItem key={item.id} {...item} />;
+            })}
             <footer>
-              <div className='d-flex justify-content-between pt-2'>
+              <div className='d-flex justify-content-between py-2'>
                 <div className='back-to-shop'>
-                  <button className='btn'>chekout</button>
+                  <button className='btn btn-outline-success'>Chekout</button>
+                </div>
+                <div className='back-to-shop'>
+                  <button
+                    onClick={() => dispatch(clearCart())}
+                    type='button'
+                    className='btn btn-outline-danger'
+                  >
+                    Clear Cart
+                  </button>
                 </div>
                 <div className='back-to-shop mb-2'>
-                  <a href='#a'>Total ${total}</a>
+                  <a href='#a'>Total ${total.toFixed(2)}</a>
                 </div>
               </div>
             </footer>
           </div>
-        </div>
-        <div className='back-to-shop pt-5'>
-          <a href='#a'>Back to shop</a>
         </div>
       </div>
     </>
