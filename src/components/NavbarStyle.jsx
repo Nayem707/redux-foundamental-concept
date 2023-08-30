@@ -1,0 +1,48 @@
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
+
+const NavbarStyle = () => {
+  const { cartItems } = useSelector((store) => store.cart);
+  return (
+    <nav className=' sticky-top bg-primary text-white p-3'>
+      <div className='row d-flex align-items-center'>
+        <div className='col me-5'>
+          <h4>
+            <NavLink className='text-white ' to='/'>
+              Shop
+            </NavLink>
+          </h4>
+        </div>
+        <div className='col d-flex align-items-center gap-5'>
+          <NavLink to='/products' className='text-white '>
+            Products
+          </NavLink>
+
+          <NavLink to='/cart' className='text-white position-relative'>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
+              strokeWidth={1.5}
+              stroke='currentColor'
+              className='w-6 h-6'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                d='M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z'
+              />
+            </svg>
+
+            <span className='position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger'>
+              {cartItems.length}
+            </span>
+          </NavLink>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default NavbarStyle;

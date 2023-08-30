@@ -3,37 +3,58 @@ import React from 'react';
 const Card = () => {
   return (
     <>
-      <div class='container-fluid'>
-        <div class='px-lg-5'>
-          <div class='row'>
-            <div class='col-xl-3 col-lg-4 col-md-6 mb-4'>
-              <div class='bg-white rounded shadow-sm'>
-                <img
-                  src='https://bootstrapious.com/i/snippets/sn-gallery/img-1.jpg'
-                  alt=''
-                  class='img-fluid card-img-top'
-                />
-                <div class='p-4'>
-                  <h5>
-                    {' '}
-                    <a href='#a' class='text-dark'>
-                      Red paint cup
-                    </a>
-                  </h5>
-                  <p class='small text-muted mb-0'>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                  </p>
-                  <div class='d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4'>
-                    <p class='small mb-0'>
-                      <i class='fa fa-picture-o mr-2'></i>
-                      <span class='font-weight-bold'>JPG</span>
-                    </p>
-                    <div class='badge badge-danger px-3 rounded-pill font-weight-normal'>
-                      New
-                    </div>
-                  </div>
-                </div>
-              </div>
+      <div class='row row-cols-1 row-cols-md-3 g-4'>
+        <div class='col'>
+          <div class='card h-100'>
+            <img
+              src='https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg'
+              class='card-img-top'
+              alt='...'
+            />
+            <div class='card-body'>
+              <h5 class='card-title'>Card title</h5>
+              <p class='card-text'>
+                This is a wider card with supporting text below as a natural
+              </p>
+            </div>
+            <div class='card-footer'>
+              <small class='text-muted'>Last updated 3 mins ago</small>
+            </div>
+          </div>
+        </div>
+        <div class='col'>
+          <div class='card h-100'>
+            <img
+              src='https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg'
+              class='card-img-top'
+              alt='...'
+            />
+            <div class='card-body'>
+              <h5 class='card-title'>Card title</h5>
+              <p class='card-text'>
+                This card has supporting text below as a natural lead-in to
+              </p>
+            </div>
+            <div class='card-footer'>
+              <small class='text-muted'>Last updated 3 mins ago</small>
+            </div>
+          </div>
+        </div>
+        <div class='col'>
+          <div class='card h-100'>
+            <img
+              src='https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg'
+              class='card-img-top'
+              alt='...'
+            />
+            <div class='card-body'>
+              <h5 class='card-title'>Card title</h5>
+              <p class='card-text'>
+                This is a wider card with supporting text below as a natural
+              </p>
+            </div>
+            <div class='card-footer'>
+              <small class='text-muted'>Last updated 3 mins ago</small>
             </div>
           </div>
         </div>

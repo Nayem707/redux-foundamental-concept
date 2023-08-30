@@ -1,28 +1,29 @@
 import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
-import Home from './pages/home/HomeView';
 import { getCartItems } from './features/cart/cartURL';
 import { useEffect } from 'react';
 import { calculateTotals } from './features/cart/cartSlice';
+import { Outlet } from 'react-router-dom';
+import NavbarStyle from './components/NavbarStyle';
+import { getProducts } from './features/cart/ProductSlice';
 
 function App() {
-  const { cartItems, isLoading } = useSelector((store) => store.cart);
+  const { cartItems } = useSelector((store) => store.cart);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getCartItems());
   }, [dispatch]);
-
+  useEffect(() => {
+    dispatch(getProducts());
+  }, [dispatch]);
   useEffect(() => {
     dispatch(calculateTotals());
   }, [cartItems]);
 
-  if (isLoading) {
-    return <h2 className='text-center p-5'>Loading...</h2>;
-  }
-
   return (
     <>
-      <Home />
+      <NavbarStyle />
+      <Outlet />
     </>
   );
 }

@@ -1,14 +1,15 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import NavbarStyle from '../../components/cart/NavbarStyle';
-import CartContainer from '../../components/cart/CartContainer';
+import Card from '../../components/cart/Card';
 
 function Home() {
   return (
-    <>
-      <NavbarStyle />
-      <CartContainer />
-    </>
+    <section className='text-center p-5'>
+      <header>
+        <h2>Nayem Islam</h2>
+        <h6>is Currently emty!</h6>
+      </header>
+      <Card />
+    </section>
   );
 }
 
