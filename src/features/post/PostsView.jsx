@@ -10,7 +10,7 @@ const PostsView = () => {
 
   useEffect(() => {
     dispatch(fetchPosts());
-  }, []);
+  }, [posts]);
 
   return (
     <section>

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { clearCart } from '../../features/cart/cartSlice';
 
 const CartContainer = () => {
-  const { cartItems, total, amount } = useSelector((store) => store.cart);
+  const { cartItems, total } = useSelector((store) => store.cart);
   const dispatch = useDispatch();
 
   if (cartItems.length < 1) {
@@ -26,7 +26,7 @@ const CartContainer = () => {
           </header>
           <div className='col cart'>
             {cartItems.map((item) => {
-              return <CartItem key={item.id} {...item} amount={amount} />;
+              return <CartItem key={item.id} {...item} />;
             })}
             <footer>
               <div className='d-flex justify-content-between py-2'>

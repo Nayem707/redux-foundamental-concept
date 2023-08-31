@@ -23,7 +23,7 @@ const CartItem = ({ id, img, price, amount }) => {
                 dispatch(removeItem(id));
                 return;
               }
-              dispatch(decrease());
+              dispatch(decrease(id));
             }}
             className='btn decrement bg-dark rounded text-white p-2'
           >
@@ -32,7 +32,7 @@ const CartItem = ({ id, img, price, amount }) => {
           <p className='counter'>{amount}</p>
           <button
             onClick={() => {
-              dispatch(increase());
+              dispatch(increase(id));
             }}
             className='btn increment bg-dark rounded text-white p-2'
           >

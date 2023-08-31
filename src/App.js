@@ -6,6 +6,7 @@ import { calculateTotals } from './features/cart/cartSlice';
 import { Outlet } from 'react-router-dom';
 import NavbarStyle from './components/NavbarStyle';
 import { getProducts } from './features/cart/ProductSlice';
+import { getTodo } from './features/users/userSlice';
 
 function App() {
   const { cartItems } = useSelector((store) => store.cart);
@@ -13,9 +14,15 @@ function App() {
   useEffect(() => {
     dispatch(getCartItems());
   }, [dispatch]);
+
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(getTodo());
+  }, [dispatch]);
+
   useEffect(() => {
     dispatch(calculateTotals());
   }, [cartItems]);

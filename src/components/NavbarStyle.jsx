@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { NavLink, Link } from 'react-router-dom';
 
 const NavbarStyle = () => {
-  const { cartItems } = useSelector((store) => store.cart);
+  const { amount } = useSelector((store) => store.cart);
   return (
     <nav className=' sticky-top bg-primary text-white p-3'>
       <div className='row d-flex align-items-center'>
@@ -36,7 +36,7 @@ const NavbarStyle = () => {
             </svg>
 
             <span className='position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger'>
-              {cartItems.length}
+              {amount}
             </span>
           </NavLink>
         </div>

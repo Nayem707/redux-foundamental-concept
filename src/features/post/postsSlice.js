@@ -4,8 +4,8 @@ import { fetchPosts } from './postURL';
 const postsSlice = createSlice({
   name: 'posts',
   initialState: {
-    isLoading: false,
     posts: [],
+    isLoading: false,
     error: null,
   },
 
