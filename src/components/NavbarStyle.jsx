@@ -1,22 +1,22 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 const NavbarStyle = () => {
   const { cartItems } = useSelector((store) => store.cart);
   return (
     <nav className=' sticky-top bg-primary text-white p-3'>
       <div className='row d-flex align-items-center'>
-        <div className='col me-5'>
-          <h4>
-            <NavLink className='text-white ' to='/'>
-              Shop
-            </NavLink>
-          </h4>
+        <div className='col'>
+          <Link className='text-white ' to='/'>
+            Shop
+          </Link>
         </div>
         <div className='col d-flex align-items-center gap-5'>
-          <NavLink to='/products' className='text-white '>
-            Products
+          <NavLink to='/products' className=''>
+            <button className='btn btn-outline-success text-white'>
+              Products
+            </button>
           </NavLink>
 
           <NavLink to='/cart' className='text-white position-relative'>

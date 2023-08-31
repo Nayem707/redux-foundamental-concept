@@ -1,15 +1,9 @@
 import CartItem from './CartItem';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  clearCart,
-  decrease,
-  increase,
-  removeItem,
-} from '../../features/cart/cartSlice';
+import { clearCart } from '../../features/cart/cartSlice';
 
 const CartContainer = () => {
-  const { cartItems, total } = useSelector((store) => store.cart);
-
+  const { cartItems, total, amount } = useSelector((store) => store.cart);
   const dispatch = useDispatch();
 
   if (cartItems.length < 1) {
@@ -32,7 +26,7 @@ const CartContainer = () => {
           </header>
           <div className='col cart'>
             {cartItems.map((item) => {
-              return <CartItem {...item} />;
+              return <CartItem key={item.id} {...item} amount={amount} />;
             })}
             <footer>
               <div className='d-flex justify-content-between py-2'>

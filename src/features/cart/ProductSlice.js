@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const baseURL = 'https://fakestoreapi.com/products';
+const baseURL = 'https://course-api.com/react-useReducer-cart-project';
 
 export const getProducts = createAsyncThunk(
   'products/getProducts',

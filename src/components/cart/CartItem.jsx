@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { decrease, increase, removeItem } from '../../features/cart/cartSlice';
+import { increase, decrease, removeItem } from '../../features/cart/cartSlice';
 
-const CartItem = ({ id, image, price, amount }) => {
+const CartItem = ({ id, img, price, amount }) => {
   const dispatch = useDispatch();
 
   return (
@@ -11,7 +11,7 @@ const CartItem = ({ id, image, price, amount }) => {
         <div className='col-2'>
           <img
             className='img-fluid object-fit-cover border rounded'
-            src={image}
+            src={img}
             alt='...'
           />
         </div>
@@ -19,11 +19,11 @@ const CartItem = ({ id, image, price, amount }) => {
         <div className='col d-flex gap-2'>
           <button
             onClick={() => {
-              if (price === 1) {
+              if (amount === 1) {
                 dispatch(removeItem(id));
                 return;
               }
-              dispatch(decrease(id));
+              dispatch(decrease());
             }}
             className='btn decrement bg-dark rounded text-white p-2'
           >
@@ -32,7 +32,7 @@ const CartItem = ({ id, image, price, amount }) => {
           <p className='counter'>{amount}</p>
           <button
             onClick={() => {
-              dispatch(increase(id));
+              dispatch(increase());
             }}
             className='btn increment bg-dark rounded text-white p-2'
           >
