@@ -5,6 +5,7 @@ import HomeSearch from './HomeSearch';
 
 function Home() {
   const { getTodoItems, isLoading, error } = useSelector((store) => store.todo);
+  console.log(getTodoItems);
 
   if (isLoading) {
     return <h2 className='text-center p-5'>Loading...</h2>;

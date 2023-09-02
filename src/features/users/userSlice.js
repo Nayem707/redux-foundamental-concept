@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const baseURL = 'https://fakestoreapi.com/products';
+const baseURL = 'http://localhost:8000/';
 
 export const getTodo = createAsyncThunk('todo/getTodo', async (thunkAPI) => {
   try {

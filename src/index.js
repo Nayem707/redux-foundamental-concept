@@ -11,6 +11,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './pages/home/HomeView';
 import CartContainer from './components/cart/CartContainer';
 import Products from './pages/products';
+import Filter from './filter/index';
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home />,
+        element: <Filter />,
       },
       {
         path: '/products',

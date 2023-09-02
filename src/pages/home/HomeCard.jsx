@@ -1,12 +1,12 @@
 import React from 'react';
 import Skeleton from 'react-loading-skeleton';
 
-const HomeCard = ({ id, image, price, title }) => {
+const HomeCard = ({ id, img, price, title }) => {
   return (
     <div className='col' key={id}>
       <div className='card h-100 p-2'>
         <img
-          src={image || <Skeleton count={5} />}
+          src={img || <Skeleton count={5} />}
           className='card-img-top'
           alt='...'
         />
