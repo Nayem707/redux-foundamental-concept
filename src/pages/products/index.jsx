@@ -1,18 +1,17 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import ProductCard from './ProductCard';
 import { addToCart } from '../../features/cart/cartSlice';
+import Skeleton from 'react-loading-skeleton';
 
 const Products = () => {
   const { productsItem, isLoading, error } = useSelector(
     (store) => store.products
   );
   const dispatch = useDispatch();
-
   return (
     <section className='p-3'>
       {isLoading && <h2 className='text-center p-5'>Loading...</h2>}
-      {error && <h2 className='text-center p-5'>Somthing wrong!</h2>}
+      {error && <h2 className='text-center p-5'>Somthing wrong!😌</h2>}
       <div className='container text-center'>
         <div className='row row-cols-1 row-cols-md-5 g-2'>
           {/* <ProductCard key={item.id} {...item} />; */}
@@ -20,7 +19,11 @@ const Products = () => {
             return (
               <div className='col' key={item.id}>
                 <div className='card h-100 p-2'>
-                  <img src={item.img} className='card-img-top' alt='...' />
+                  <img
+                    src={item.img || <Skeleton />}
+                    className='card-img-top'
+                    alt='...'
+                  />
 
                   <div className='card-body p-2'>
                     <h5 className='fw-bolder'>${item.price}</h5>

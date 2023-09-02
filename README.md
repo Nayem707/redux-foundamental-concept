@@ -17,37 +17,39 @@ You may also see any lint errors in the console.
 
 ### Use Context
 
-### Step-1:
+### Step-1
 
 First of all, We need create a Context Folder. 'context' -> UserContext.js
 
-### step-2:
+### step-2
 
-import { createContext } from "react";
-
+```js
+import { createContext } from 'react';
 export const UserContext = createContext();
+```
 
-### step-3:
+### step-3
 
-Go To 'App.js' componenet and then->
+Go to 'App.js' componenet and then
 
-import { UserContext } from "./context/UserContext";
-
+```js
+import { UserContext } from './context/UserContext';
 <UserContext.Provider value={[user]}>
-<Home user={user} />
-</UserContext.Provider>
+  <Home user={user} />
+</UserContext.Provider>;
+```
 
-### Make sure before you must import children's components to the app components "Home.js".
+Make sure before you must import children's components to the app components "Home.js".
 
-### step-4:
+### step-4
 
+```js
 import { userContext } from "../context/userContext";
 
 const Home = () => {
-
 const [user] = useContext(userContext);
-
 return (<p>{user}<p>);
 };
 
 export default Home;
+```
