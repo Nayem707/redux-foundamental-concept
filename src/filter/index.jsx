@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 export default function Filter() {
   const [selectedCategory, setSelectedCategory] = useState();
-  const { getTodoItems } = useSelector((state) => state.todo);
+  const { getTodoItems, isLoading, error } = useSelector((state) => state.todo);
 
   // Function to get filtered list
   function getFilteredList() {
@@ -23,6 +23,14 @@ export default function Filter() {
 
   function handleCategoryChange(e) {
     setSelectedCategory(e.target.value);
+  }
+
+  if (isLoading) {
+    return <h2 className='text-center p-5'>Loading...</h2>;
+  }
+
+  if (error) {
+    return <h2 className='text-center p-5'>Somthing wrong!😌</h2>;
   }
 
   return (

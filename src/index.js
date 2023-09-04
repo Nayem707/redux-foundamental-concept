@@ -12,6 +12,7 @@ import Home from './pages/home/HomeView';
 import CartContainer from './components/cart/CartContainer';
 import Products from './pages/products';
 import Filter from './filter/index';
+import ItemDetails from './filter/ItemDetails';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: '/products',
         element: <Products />,
+      },
+      {
+        path: '/products/:id',
+        element: <ItemDetails />,
       },
       {
         path: '/cart',

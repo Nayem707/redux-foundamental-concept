@@ -6,7 +6,7 @@ const CartItem = ({ id, img, price, amount }) => {
   const dispatch = useDispatch();
 
   return (
-    <div key={id} className='row border-top '>
+    <div className='row border-top '>
       <div className='row main align-items-center  border-bottom p-2'>
         <div className='col-2'>
           <img
@@ -49,7 +49,7 @@ const CartItem = ({ id, img, price, amount }) => {
           >
             &#10005;
           </button>
-          <span> ${price}</span>
+          <span> {price}</span>
         </div>
       </div>
     </div>

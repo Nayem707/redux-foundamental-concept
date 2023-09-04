@@ -7,7 +7,6 @@ const ProductCard = ({ title, price, image, id }) => {
   const addtoCart = (id) => {
     //some code here!
     dispatch(addToCart(id));
-    console.log(id);
   };
 
   return (

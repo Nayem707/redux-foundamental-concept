@@ -10,6 +10,7 @@ import { getTodo } from './features/users/userSlice';
 
 function App() {
   const { cartItems } = useSelector((store) => store.cart);
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getCartItems());

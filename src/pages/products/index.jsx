@@ -7,6 +7,7 @@ const Products = () => {
   const { productsItem, isLoading, error } = useSelector(
     (store) => store.products
   );
+
   const dispatch = useDispatch();
   return (
     <section className='p-3'>
@@ -26,7 +27,7 @@ const Products = () => {
                   />
 
                   <div className='card-body p-2'>
-                    <h5 className='fw-bolder'>${item.price}</h5>
+                    <h5 className='fw-bolder'>{item.price}</h5>
                     <p className='card-text fst-normal'>{item.title}</p>
                   </div>
                   <div className='card-footer'>

@@ -1,16 +1,22 @@
 import React from 'react';
 import './itemStyle.css';
+import { Link } from 'react-router-dom';
 
-// React Component to display individual item
-const Item = ({ title, category }) => (
+const Item = ({ title, category, img, id }) => (
   <div className='col'>
-    <div className='card h-100 p-2'>
-      <div className='card-body p-2'>{title}</div>
+    <Link to={`products/${id}`}>
+      <div className='card h-100 p-2'>
+        <div className='card-body p-2'>
+          <img src={img} className='card-img-top' alt='...' />
+        </div>
 
-      <div className='card-footer'>
-        <div className='d-grid'>{category}</div>
+        <div className='card-body p-2'>{title}</div>
+
+        <div className='card-footer'>
+          <div className='d-grid'>{category}</div>
+        </div>
       </div>
-    </div>
+    </Link>
   </div>
 );
 
