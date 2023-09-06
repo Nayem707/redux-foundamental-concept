@@ -1,15 +1,10 @@
 import React from 'react';
-import Skeleton from 'react-loading-skeleton';
 
 const HomeCard = ({ id, img, price, title }) => {
   return (
     <div className='col' key={id}>
       <div className='card h-100 p-2'>
-        <img
-          src={img || <Skeleton count={5} />}
-          className='card-img-top'
-          alt='...'
-        />
+        <img src={img} className='card-img-top' alt='...' />
 
         <div className='card-body p-2'>
           <h5 className='fw-bolder'>${price}</h5>

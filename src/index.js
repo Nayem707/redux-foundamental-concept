@@ -12,7 +12,8 @@ import Home from './pages/home/HomeView';
 import CartContainer from './components/cart/CartContainer';
 import Products from './pages/products';
 import Filter from './filter/index';
-import ItemDetails from './filter/ItemDetails';
+import SeachView from './Search';
+import DetailsView from './pages/details';
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/products/:id',
-        element: <ItemDetails />,
+        element: <DetailsView />,
       },
       {
         path: '/cart',
@@ -40,6 +41,7 @@ const router = createBrowserRouter([
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <Provider store={store}>
     <RouterProvider router={router} />

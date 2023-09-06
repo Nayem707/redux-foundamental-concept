@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { increase, decrease, removeItem } from '../../features/cart/cartSlice';
+import { Link } from 'react-router-dom';
 
 const CartItem = ({ id, img, price, amount }) => {
   const dispatch = useDispatch();
@@ -9,6 +10,7 @@ const CartItem = ({ id, img, price, amount }) => {
     <div className='row border-top '>
       <div className='row main align-items-center  border-bottom p-2'>
         <div className='col-2'>
+          <Link to=
           <img
             className='img-fluid object-fit-cover border rounded'
             src={img}

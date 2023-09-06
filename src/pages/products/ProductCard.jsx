@@ -1,32 +1,35 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../features/cart/cartSlice';
+import { Link } from 'react-router-dom';
 
-const ProductCard = ({ title, price, image, id }) => {
+const ProductCard = ({ items }) => {
+  const { cartItems } = useSelector((store) => store.cart);
+  const isInCart = cartItems.find((cartItem) => cartItem.id === items.id);
   const dispatch = useDispatch();
-
-  const addtoCart = (id) => {
-    //some code here!
-    dispatch(addToCart(id));
-  };
 
   return (
     <div className='col'>
       <div className='card h-100 p-2'>
-        <img src={image} className='card-img-top' alt='...' />
-
         <div className='card-body p-2'>
-          <h5 className='fw-bolder'>${price}</h5>
-          <p className='card-text fst-normal'>{title}</p>
+          <Link to={items.id}>
+            <img src={items.img} className='card-img-top img-fluid' alt='...' />
+          </Link>
         </div>
+        <div className='card-body p-2'>{items.title}</div>
+
         <div className='card-footer'>
           <div className='d-grid'>
-            <button
-              className='btn btn-warning'
-              type='button'
-              onClick={() => addtoCart(id)}
-            >
-              Add to cart
-            </button>
+            {isInCart ? (
+              <button className='btn btn-secondary disabled'>Item Added</button>
+            ) : (
+              <button
+                className='btn btn-warning'
+                type='button'
+                onClick={() => dispatch(addToCart(items))}
+              >
+                Add to cart
+              </button>
+            )}
           </div>
         </div>
       </div>

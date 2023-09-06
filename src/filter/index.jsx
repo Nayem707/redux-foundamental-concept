@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import Item from './Item';
 import './index.css';
 import { useSelector } from 'react-redux';
+import SearchForm from './SearchForm';
 
 export default function Filter() {
   const [selectedCategory, setSelectedCategory] = useState();
@@ -39,6 +40,7 @@ export default function Filter() {
         <div>Filter by Category:</div>
         <div className=''>
           <select
+            className='form-select'
             name='category-list'
             id='category-list'
             onChange={handleCategoryChange}
@@ -49,6 +51,7 @@ export default function Filter() {
             <option value='man'>Man</option>
           </select>
         </div>
+        <SearchForm />
       </div>
 
       <div className='container text-center'>
