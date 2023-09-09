@@ -2,12 +2,12 @@ import React from 'react';
 
 const SearchForm = () => {
   return (
-    <div class='d-flex justify-content-center'>
-      <div class='cardHome'>
-        <div class='input-group '>
-          <input type='text' class='form-control' />
-          <div class='input-group-append'>
-            <button class='btn btn-primary'>
+    <div className='d-flex justify-content-center'>
+      <div className='cardHome'>
+        <div className='input-group '>
+          <input type='text' className='form-control' />
+          <div className='input-group-append'>
+            <button className='btn btn-primary'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 fill='none'
