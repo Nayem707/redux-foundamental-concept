@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const baseURL = 'http://localhost:8000/';
+const baseURL = 'https://products-api-490.onrender.com';
 
 export const getTodo = createAsyncThunk('todo/getTodo', async (thunkAPI) => {
   try {
