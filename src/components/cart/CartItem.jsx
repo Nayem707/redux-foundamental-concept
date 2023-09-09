@@ -10,12 +10,13 @@ const CartItem = ({ id, img, price, amount }) => {
     <div className='row border-top '>
       <div className='row main align-items-center  border-bottom p-2'>
         <div className='col-2'>
-          <Link to=
-          <img
-            className='img-fluid object-fit-cover border rounded'
-            src={img}
-            alt='...'
-          />
+          <Link to={`/products/${id}`}>
+            <img
+              className='img-fluid object-fit-cover border rounded'
+              src={img}
+              alt='...'
+            />
+          </Link>
         </div>
 
         <div className='col d-flex gap-2'>

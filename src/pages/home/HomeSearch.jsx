@@ -2,12 +2,12 @@ import React from 'react';
 
 const HomeSearch = () => {
   return (
-    <div class='container d-flex justify-content-center'>
-      <div class='cardHome mt-5 p-4'>
-        <div class='input-group mb-3'>
-          <input type='text' class='form-control' />
-          <div class='input-group-append'>
-            <button class='btn btn-primary'>
+    <div className='container d-flex justify-content-center'>
+      <div className='cardHome mt-5 p-4'>
+        <div className='input-group mb-3'>
+          <input type='text' className='form-control' />
+          <div className='input-group-append'>
+            <button className='btn btn-primary'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 fill='none'

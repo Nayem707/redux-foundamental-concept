@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
-import { getCartItems } from './features/cart/cartURL';
 import { useEffect } from 'react';
 import { calculateTotals } from './features/cart/cartSlice';
 import { Outlet } from 'react-router-dom';
@@ -12,9 +11,6 @@ function App() {
   const { cartItems } = useSelector((store) => store.cart);
 
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getCartItems());
-  }, [dispatch]);
 
   useEffect(() => {
     dispatch(getProducts());
