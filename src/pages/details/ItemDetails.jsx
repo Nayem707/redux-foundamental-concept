@@ -43,7 +43,7 @@ const ItemDetails = () => {
                   </div>
                   <p className='about'>{i.desc}</p>
                   <div className='d-flex justify-content-between'>
-                    <h4>{i.price}</h4>
+                    <h4>${i.price}</h4>
                     <h5 className='d-flex gap-1 align-items-center'>
                       {i.rating ? (
                         <>
