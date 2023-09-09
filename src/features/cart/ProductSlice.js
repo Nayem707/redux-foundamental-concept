@@ -1,7 +1,9 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const baseURL = 'http://localhost:8000/';
+const baseURL1 = 'https://course-api.com/react-useReducer-cart-project';
+const baseURL = 'https://products-api-490.onrender.com';
+const baseURL2 = 'http://localhost:8000';
 
 export const getProducts = createAsyncThunk(
   'products/getProducts',

@@ -11,9 +11,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './pages/home/HomeView';
 import CartContainer from './components/cart/CartContainer';
 import Products from './pages/products';
-import Filter from './filter/index';
-import SeachView from './Search';
+import Filter from './components/filter/index';
+import SeachView from './components/Search/index';
 import DetailsView from './pages/details';
+import Register from './pages/form/Register';
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Filter />,
+        element: <Register />,
       },
       {
         path: '/products',
